@@ -50,7 +50,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.jsx', '.scss', '.js', '.json']
   },
   devtool: 'source-map',
   plugins: [
@@ -68,6 +68,14 @@ module.exports = {
   ],
   module: {
     loaders: [
+      {
+        test: /(\.scss|\.css)$/,
+        loaders: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          require.resolve('sass-loader') + '?sourceMap'
+        ]
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
