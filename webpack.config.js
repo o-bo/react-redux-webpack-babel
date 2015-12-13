@@ -3,11 +3,14 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/dev-server',
-    './scripts/index'
+    //'webpack-dev-server/client?http://localhost:3000',
+    //'webpack/hot/dev-server',
+    './app/webpack/index.jsx'
   ],
-  output: { path: __dirname, filename: 'bundle.js', publicPath: '/static/' },
+  output: {
+    path: path.join(__dirname, "app/assets/javascripts/static"),
+    filename: "[name].js",
+  },
   resolve: {
     extensions: ['', '.jsx', '.scss', '.js', '.json']
   },
@@ -29,7 +32,6 @@ module.exports = {
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, 'scripts'),
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']

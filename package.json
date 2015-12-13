@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "./node_modules/.bin/webpack --config webpack.config.production.js",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "watch": "webpack --watch --colors --progress"
   },
   "keywords": [
     "react",
