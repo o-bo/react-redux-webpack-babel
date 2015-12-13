@@ -7,7 +7,7 @@ export default class App extends Component {
       <div>
         <h1>Hello, World!</h1>
 
-        <Button label="Hello world" raised accent />
+        <Button label="Hello" raised accent />
       </div>
     );
   }
