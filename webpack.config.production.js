@@ -43,7 +43,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: ['./scripts/index'],
+  entry: ['babel-polyfill', './scripts/index'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -73,7 +73,8 @@ module.exports = {
         loader: 'babel-loader',
         include: path.join(__dirname, 'scripts'),
         query: {
-          presets: ['es2015', 'react']
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0', 'react']
         }
       }
     ]

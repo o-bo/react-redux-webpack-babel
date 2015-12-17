@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
+    'babel-polyfill',
     'webpack-dev-server/client?http://localhost:5000',
     'webpack/hot/dev-server',
     './scripts/index'
@@ -24,7 +25,8 @@ module.exports = {
         include: path.join(__dirname, 'scripts'),
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react']
+          plugins: ['transform-runtime'],
+          presets: ['es2015', 'stage-0', 'react']
         }
       }
     ]
