@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
 
   def index
-    render 'application/index'
+    if current_user
+      render 'application/index'
+    else
+      redirect_to new_user_session_path
+    end
   end
 end

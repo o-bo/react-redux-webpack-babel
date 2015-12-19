@@ -4,12 +4,20 @@
   <title>ReactReduxWebpackBabel</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css" %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-color: #EEE">
 
 <%= yield %>
 
+<% if current_user %>
+  <div style="display: none;">
+    <%= link_to main_app.destroy_user_session_path, id: "close-session-link", :method => :delete do %>
+      ''
+    <% end %>
+  </div>
+<% end %>
 </body>
 </html>
