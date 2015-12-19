@@ -22,5 +22,11 @@ module ReactReduxWebpackBabel
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.secret_key_base = Figaro.env.secret_key_base
+    config.secret_token = Figaro.env.secret_token
+
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = [:fr, :en]
   end
 end
