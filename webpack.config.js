@@ -3,13 +3,16 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/dev-server',
-    './scripts/index'
+    //'webpack-dev-server/client?http://localhost:3000',
+    //'webpack/hot/dev-server',
+    './app/components/index.jsx'
   ],
-  output: { path: __dirname, filename: 'bundle.js', publicPath: '/static/' },
+  output: {
+    path: path.join(__dirname, "app/assets/javascripts/components"),
+    filename: "[name].js",
+  },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.jsx', '.scss', '.js', '.json']
   },
   devtool: 'eval-source-map',
   plugins: [
@@ -19,9 +22,16 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /(\.scss|\.css)$/,
+        loaders: [
+          require.resolve('style-loader'),
+          require.resolve('css-loader') + '?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          require.resolve('sass-loader') + '?sourceMap'
+        ]
+      },
+      {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, 'scripts'),
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']

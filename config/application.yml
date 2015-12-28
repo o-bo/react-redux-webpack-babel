@@ -1,0 +1,31 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+# Database MYSQL credentials
+mysql_username: rrwb
+mysql_password: rrwb
+  # Devise secret key
+devise_secret_key: ab35c23750e6b34087c3d0ca1e7eddf62651d9dcb7aeb3723c62969dde455a060d70a8135ef3cd7826647792ce11766d9c12aecd9c56741391fc1d9bc507844d
+
+
+  # Environments specific keys
+development:
+  secret_key_base: 7f7091e4a0607cc1ba1e29053afadd8af04d9a73f90b0cd5372ac01b080b246048f588726ed604de98f37657f9964ae835c184db98dd2c7b1914632bc62ac8c7
+
+test:
+  secret_key_base: 85f4afc6230ec943baccc4a683464b2f266bb1e617a35b689a00a638adfd10161a73de2d4733506df857bb9260ec1bc2221062e84d95398ee89e236e97495a59
+
+production:
+  secret_key_base: 82f1cb8f692b108cadb2f6579cba3334087410b7982fec2612faed8eb40f372281fe56fb71836dd821212d85d71656fde04bc8ae2536a1b85147e86338cae932
+  secret_token: f76ab1eb2d33afab64c92cec952deb76711e7da34fe34db8430d914d507d7880016e924cef7de271d484ddd8d2a97a770ca552e7c8b9e633334dfe4597322ff6
+
+
